@@ -2,8 +2,8 @@
 
 const events = require('../utils/event-pool.js');
 const faker = require('faker');
-require('../modules/vendor.js');
-require('../modules/driver.js');
+const vendor = require('../modules/vendor.js');
+const driver = require('../modules/driver.js');
 
 let consoleSpy;
 let testDelivery;
@@ -22,7 +22,6 @@ beforeEach(() => {
 afterEach(() => {
     consoleSpy.mockRestore();
 })
-
 
 // Vendor
 
@@ -45,7 +44,6 @@ describe('vendor tests', () => {
     // Same with this one?
 })
 
-
 // Driver
 describe('driver tests', () => {
 
@@ -64,12 +62,3 @@ describe('driver tests', () => {
         expect(consoleSpy).toEqual(testDelivery.orderID);
     })
 })
-
-
-// Company
-
-// Can see Pickup notice
-
-// Can see In-Transit notice
-
-// Can see Delivered notice

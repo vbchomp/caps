@@ -1,12 +1,8 @@
 'use strict';
 
-const events = require('../util/event-pool.js');
-const faker = require('faker');
+const events = require('../utils/event-pool.js'); // allows to listen for all events
+const handlePickup = require('../handlers/pickupHandler.js');
 
-// listen for delivered event => handleDelivery
+events.on('pickup', handlePickup);
 
 // Pickup Queue
-
-// Alert Vendors status of deliveries
-// In-Transit
-// Delivered
