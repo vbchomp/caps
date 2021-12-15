@@ -1,7 +1,11 @@
 'use strict';
 
-const events = require('../util/event-pool.js');
+const events = require('../utils/event-pool.js'); // allows to listen for all events
 const faker = require('faker');
+const handleDelivery = require('../handlers/deliveryHandler.js');
+
+
+
 
 // delivery variable <- store, orderID, customer, address
 setInterval(() => {
@@ -15,11 +19,4 @@ setInterval(() => {
 }, 5000);
 
 
-
-// 
-
-// Ready for Pickup
-
-// See status of deliveries
-// In-Transit
-// Delivered
+events.on('delivered', handleDelivery);

@@ -1,4 +1,4 @@
-LAB: Event Driven Applications
+# LAB: Event Driven Applications
 Before you begin
 Business Requirements
 Phase 1 Requirements
