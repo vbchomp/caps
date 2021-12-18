@@ -1,9 +1,5 @@
 'use strict';
 
-// not needed for this lab.
-// const events = require('../utils/event-pool.js'); // allows to listen for all events
-// const handlePickup = require('../handlers/pickupHandler.js');
-
 // connecting to socket io as a client
 const io = require('socket.io-client');
 // connecting to the HUB

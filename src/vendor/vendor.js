@@ -1,10 +1,5 @@
 'use strict';
 
-// not needed for this lab.
-// const events = require('../utils/event-pool.js'); // allows to listen for all events
-// const faker = require('faker');
-// const handleDelivery = require('../handlers/deliveryHandler.js');
-
 const io = require('socket.io-client');
 const socket = io.connect('http://localhost:3000/caps');
 

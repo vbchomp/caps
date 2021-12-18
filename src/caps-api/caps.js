@@ -9,6 +9,9 @@ const io = require('socket.io-client');
 const express = require('express');
 const cors = require('cors');
 
+const Queue = require('./util/queue');
+const queue = new Queue('api');
+
 const socket = io.connect('http://localhost:3000/caps');
 
 let delivery = {
@@ -33,21 +36,12 @@ app.post('/pickup', (req,res) => {
 // in-transit
 // delivered
 
-// Event listeners => callback
-// events on: pickup, in-transit, delivered
-// events.on('pickup', (payload) => logAllEvents('pickup', payload));
-// events.on('inTransit', (payload) => logAllEvents('inTransit', payload));
-// events.on('delivery', (payload) => logAllEvents('delivery', payload));
-
-
-// callback function
-function logAllEvents(event, payload) {
-    // console log event, time, payload
-    console.log({
-        event: event,
-        time: new Date(),
-        payload: payload
-      })
-};
-
-module.exports = logAllEvents;
+// // callback function
+// function logAllEvents(event, payload) {
+//     // console log event, time, payload
+//     console.log({
+//         event: event,
+//         time: new Date(),
+//         payload: payload
+//       })
+// };
